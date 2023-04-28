@@ -1,0 +1,5 @@
+select country.continent, round(avg(city.population)-0.5) -- don't use round(avg(city.population),0) as they wan't nearest integer, not rounded
+from city 
+inner join country 
+on city.countrycode = country.code
+group by country.continent
